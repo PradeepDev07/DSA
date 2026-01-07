@@ -1,58 +1,17 @@
-def find_minimum_value(arr):
-    min_val = arr[0]
-    length = len(arr)
-    for val in range(1,length):
-        if min_val > arr[val]:
-            min_val = arr[val]
-    if length>0:
-        return min_val
-    else:
-        raise ValueError("Array is empty")
+# Question: Find the Maximum Element
+# Hint: Traverse once, keep max
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 
-def find_maxmum_value(arr):
+def find_max(arr):
+    if not arr:
+        return None
     max_val = arr[0]
-    length = len(arr)
-    for val in range(1,length):
-        if max_val < arr[val]:
-            max_val = arr[val]
-    if length>0:
-        return max_val
-    else:
-        raise ValueError("Array is empty")
-
-
-    
-
-
-
-
-def main():
-    arr = list(map(int,input("Enter the number in order with space separating :").split(" ")))
-    print(arr)
-    print(find_maxmum_value(arr))
-    print(find_minimum_value(arr))
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    for num in arr:
+        if num > max_val:
+            max_val = num
+    return max_val
 
 if __name__ == "__main__":
-    main()
-
-
-
+    arr = [1, 42, 3, 10, 5]
+    print(f"Max in {arr} is {find_max(arr)}")

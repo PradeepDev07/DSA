@@ -1,13 +1,14 @@
+# Question: Find the Sum of Array Elements
+# Hint: Accumulate using loop
+# Time Complexity: O(n)
+# Space Complexity: O(1)
 
-def sum_of_array_values(arr):
+def array_sum(arr):
     total = 0
-    for val in arr:
-        total += val
+    for num in arr:
+        total += num
     return total
-
-
 
 if __name__ == "__main__":
     arr = [1, 2, 3, 4, 5]
-    total = sum_of_array_values(arr)
-    print("The sum of the array elements is:", total)
+    print(f"Sum of {arr} is {array_sum(arr)}")

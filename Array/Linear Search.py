@@ -1,16 +1,15 @@
-def search_element(arr, target):
-    length = len(arr)
-    for i in range(length):
+# Question: Linear Search
+# Hint: Traverse and compare
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+
+def linear_search(arr, target):
+    for i in range(len(arr)):
         if arr[i] == target:
-            return f"Element found at index {i}"
-    return "Element not found in the array"
-
-
+            return i
+    return -1
 
 if __name__ == "__main__":
-    arr = list(map(int, input("Enter numbers separated by spaces: ").split()))
-    target = int(input("Enter the target number to search for: "))
-
-    print ("searching for", target, "in", arr)
-    print("result" , search_element(arr, target))
-    
+    arr = [10, 20, 30, 40, 50]
+    target = 30
+    print(f"Element {target} found at index {linear_search(arr, target)}")

@@ -1,28 +1,24 @@
+# Question: Find the Second Largest Element
+# Hint: Track largest & second largest
+# Time Complexity: O(n)
+# Space Complexity: O(1)
+
 def find_second_largest(arr):
     if len(arr) < 2:
-        raise ValueError("Array must contain at least two distinct elements.")
+        return None
     
-    first = second = float('-inf')
+    largest = float('-inf')
+    second = float('-inf')
     
-    for number in arr:
-        if number > first:
-            second = first
-            first = number
-        elif first > number > second:
-            second = number
-    
-    if second == float('-inf'):
-        raise ValueError("Array must contain at least two distinct elements.")
-    
-    return second
-
-
-
-
+    for num in arr:
+        if num > largest:
+            second = largest
+            largest = num
+        elif num > second and num != largest:
+            second = num
+            
+    return second if second != float('-inf') else None
 
 if __name__ == "__main__":
-    arr = list(map(int, input("Enter numbers separated by spaces: ").split()))
-    unique_arr = list(set(arr))
-
-
-                 
+    arr = [12, 35, 1, 10, 34, 1]
+    print(f"Second largest in {arr} is {find_second_largest(arr)}")
